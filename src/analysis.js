@@ -1,4 +1,4 @@
-const { getTrips, getDriver } = require("api"); //imported  getTrips and getDriver to access trips and driver respectively
+const { getTrips, getDriver } = require("api"); //i imported  getTrips and getDriver to access trips and driver respectively
 
 /**
  * This function should return the trip data analysis
@@ -33,9 +33,10 @@ async function analysis() {
   );
   //get the drivers object
   let driverObjArr = await Promise.all(driverPromiseArr);
+  driverObjArr;
 
   //calcuated the number of drivers with more than one vehicle
-  for (driver of driverObjArr) {
+  for (let driver of driverObjArr) {
     let noCurrentDriverVehicle = driver.vehicleID.length;
     if (noCurrentDriverVehicle > 1) {
       noOfDriversWithMoreThanOneVehicle++;
@@ -51,6 +52,9 @@ async function analysis() {
       earnings: 0,
     };
   }
+
+  driversMap;
+  driverObjArr;
 
   // let driversArr = [];
 
@@ -105,6 +109,7 @@ async function analysis() {
   let driverHighestTrips = Object.values(driversMap).find(
     (driverObj) => driverObj.noOfTrips === highestNumberOfTrips
   );
+
   let driverHighestEarnings = Object.values(driversMap).find(
     (driverObj) => driverObj.earnings === highestEarning
   );

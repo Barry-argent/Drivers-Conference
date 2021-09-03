@@ -10,7 +10,7 @@ async function driverReport() {
   // I declared a variable called responseData that will grab everything in the getTrips API
   let getTripsData = await getTrips();
   let responseData = [...getTripsData];
-  responseData;
+  // responseData;
   // This will be my final Array that will grab all my report details
   let collector = [];
   // here i want to save my drivers ID so that i can use it later so from the responseData is just collected
